@@ -33,17 +33,12 @@ const modLanguages = [].concat.apply([], languages)
      const filteredLang = modLanguages.filter((lng) => lng === l)
      //console.log(filteredLang) // ["English", "English", "English"]
      counts.push({ lang: l, count: filteredLang.length })
-   
+     counts.sort(function(a,b){
+        return b.count - a.count
+     })   
     }
-
-    const keysSorted = Object.keys(counts).sort(function(a,b){return counts[a]-counts[b]})
-
-    // for (let  i = 0; i <counts.length; i++){
-    //     sortable.push([counts[i], counts[i].count]);
-    // }
-    
-    // sortable.sort(function(a, b) {
-    //     return a[1] - b[1];
-    // })
-    
-    console.log(keysSorted)
+    function mostSpoken(arry, num) {
+        console.log(arry.slice(0,num))
+    }
+    console.log(mostSpoken(counts,10))
+ 
