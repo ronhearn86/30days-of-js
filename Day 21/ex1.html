@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript for Everyone:DOM</title>
+  </head>
+  <body>
+    <p>One</p>
+    <p id='two'>Two</p>
+    <p>Three</p>
+    <p id="fourth">Four</p>
+
+<script>
+    const changePOne = document.querySelector('p')
+    changePOne.innerText = 'Modded One'
+
+
+    const changePtwoById = document.querySelector('#two')
+    changePtwoById.innerText = 'Modded By Id Two'
+
+    const pNodeList = document.querySelectorAll('p')
+    for( let i = 0; i< pNodeList.length; i++){
+        console.log(pNodeList[i].textContent)
+    }
+    let changefour = document.getElementById('fourth')
+    changefour.innerText = 'Paragraph Four'
+    
+</script>
+ 
+  </body>
+</html>

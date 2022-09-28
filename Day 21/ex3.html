@@ -1,0 +1,61 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript for Everyone:DOM</title>
+  </head>
+  <body>
+    <div class="wrapper">
+        <h1>Asabeneh Yetayeh challenges in <span id="year">2020</span></h1>
+        <h2>30DaysOfJavaScript Challenge</h2>
+        <button id="time"></button>
+        <ul>
+            <li id="done">30DaysOfPython Challenge Done</li>
+            <li id="ongoing">30DaysOfJavaScript Challenge Ongoing</li>
+            <li class="coming">30DaysOfReact Challenge Coming</li>
+            <li class="coming">30DaysOfFullStack Challenge Coming</li>
+            <li class="coming">30DaysOfDataAnalysis Challenge Coming</li>
+            <li class="coming">30DaysOfReactNative Challenge Coming</li>
+            <li class="coming">30DaysOfMachineLearning Challenge Coming</li>
+        </ul>
+    </div>
+    <script>
+        const year = document.getElementById('year')
+        let i = 0
+        let colors = ['red','blue', 'green', 'orange', 'pink', 'yellow']
+        
+        function changeColor(){
+            year.style.color = colors[i]
+            time.style.backgroundColor = colors[i]
+            i++
+            if(i >= colors.length){
+                i=0
+            }
+        }
+        setInterval(changeColor,1000)
+        const time = document.getElementById('time')
+        let currentdate = new Date(); 
+        let datetime = "Last Sync: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+                
+        time.textContent = datetime
+        time.style.fontSize = '22px'
+        time.style.color = 'white'
+        const done = document.getElementById('done')
+        done.style.backgroundColor = 'green'
+        const ongoing = document.getElementById('ongoing')
+        ongoing.style.backgroundColor = 'Yellow'
+        
+        const coming = document.querySelectorAll('.coming')
+        coming.forEach(element => {
+            element.style.backgroundColor = 'red'
+            
+        });
+        
+    </script>
+  </body>
+</html>

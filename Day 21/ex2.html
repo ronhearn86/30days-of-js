@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript for Everyone:DOM</title>
+  </head>
+  <body>
+    <p>One</p>
+    <p>Two</p>
+    <p>Three</p>
+    <p>Four</p>
+
+<script>
+const colors = document.querySelectorAll('p')
+colors.forEach((paragraph, i) => {
+    
+    paragraph.style.fontSize = '22px'
+    paragraph.textContent = 'Modded Paragraph ' + (i+1)
+    
+    if (i%2 ===0){
+        paragraph.style.backgroundColor = 'lightpink'
+
+    }else{
+        paragraph.style.backgroundColor = 'orange'
+    }
+
+
+})
+
+</script>
+ 
+  </body>
+</html>
